@@ -1,0 +1,106 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.477196
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.477196
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.467196
+				text = "CUTTER"
+			intervals [3]:
+				xmin = 0.467196
+				xmax = 0.477196
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.477196
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.163645
+				text = "k"
+			intervals [3]:
+				xmin = 0.163645
+				xmax = 0.223833
+				text = "v"
+			intervals [4]:
+				xmin = 0.223833
+				xmax = 0.346217
+				text = "t"
+			intervals [5]:
+				xmin = 0.346217
+				xmax = 0.467196
+				text = "V"
+			intervals [6]:
+				xmin = 0.467196
+				xmax = 0.477196
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.477196
+		intervals: size = 11
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.015580
+				xmax = 0.101450
+				text = "clo"
+			intervals [3]:
+				xmin = 0.101450
+				xmax = 0.163645
+				text = "post"
+			intervals [4]:
+				xmin = 0.163645
+				xmax = 0.193739
+				text = "pr"
+			intervals [5]:
+				xmin = 0.193739
+				xmax = 0.207783
+				text = ""
+			intervals [6]:
+				xmin = 0.207783
+				xmax = 0.223833
+				text = "br"
+			intervals [7]:
+				xmin = 0.223833
+				xmax = 0.232260
+				text = "pre"
+			intervals [8]:
+				xmin = 0.232260
+				xmax = 0.304486
+				text = "clo"
+			intervals [9]:
+				xmin = 0.304486
+				xmax = 0.346217
+				text = "unpost(af)"
+			intervals [10]:
+				xmin = 0.346217
+				xmax = 0.355044
+				text = "pr"
+			intervals [11]:
+				xmin = 0.355044
+				xmax = 0.477196
+				text = ""

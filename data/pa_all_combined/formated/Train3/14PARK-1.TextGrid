@@ -1,0 +1,110 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.577044
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.577044
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.567044
+				text = "PARK"
+			intervals [3]:
+				xmin = 0.567044
+				xmax = 0.577044
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.577044
+		intervals: size = 5
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.202138
+				text = "p"
+			intervals [3]:
+				xmin = 0.202138
+				xmax = 0.417246
+				text = "a:"
+			intervals [4]:
+				xmin = 0.417246
+				xmax = 0.567044
+				text = "k"
+			intervals [5]:
+				xmin = 0.567044
+				xmax = 0.577044
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.577044
+		intervals: size = 13
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.050126
+				text = "voice"
+			intervals [3]:
+				xmin = 0.050126
+				xmax = 0.133245
+				text = "clo"
+			intervals [4]:
+				xmin = 0.133245
+				xmax = 0.202138
+				text = "post"
+			intervals [5]:
+				xmin = 0.202138
+				xmax = 0.223734
+				text = "pr"
+			intervals [6]:
+				xmin = 0.223734
+				xmax = 0.256081
+				text = ""
+			intervals [7]:
+				xmin = 0.256081
+				xmax = 0.389149
+				text = "creak"
+			intervals [8]:
+				xmin = 0.389149
+				xmax = 0.408242
+				text = ""
+			intervals [9]:
+				xmin = 0.408242
+				xmax = 0.417246
+				text = "br"
+			intervals [10]:
+				xmin = 0.417246
+				xmax = 0.445963
+				text = "pre"
+			intervals [11]:
+				xmin = 0.445963
+				xmax = 0.529633
+				text = "clo"
+			intervals [12]:
+				xmin = 0.529633
+				xmax = 0.567044
+				text = "unpost"
+			intervals [13]:
+				xmin = 0.567044
+				xmax = 0.577044
+				text = ""

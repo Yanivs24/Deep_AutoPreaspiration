@@ -1,0 +1,106 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.533786
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.533786
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.523786
+				text = "CACKY"
+			intervals [3]:
+				xmin = 0.523786
+				xmax = 0.533786
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.533786
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.183660
+				text = "k"
+			intervals [3]:
+				xmin = 0.183660
+				xmax = 0.251311
+				text = "a"
+			intervals [4]:
+				xmin = 0.251311
+				xmax = 0.408306
+				text = "k"
+			intervals [5]:
+				xmin = 0.408306
+				xmax = 0.523786
+				text = "V"
+			intervals [6]:
+				xmin = 0.523786
+				xmax = 0.533786
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.533786
+		intervals: size = 11
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.098453
+				text = "clo"
+			intervals [3]:
+				xmin = 0.098453
+				xmax = 0.183660
+				text = "post"
+			intervals [4]:
+				xmin = 0.183660
+				xmax = 0.203370
+				text = "pr"
+			intervals [5]:
+				xmin = 0.203370
+				xmax = 0.235191
+				text = "CRaperWH"
+			intervals [6]:
+				xmin = 0.235191
+				xmax = 0.251311
+				text = "br"
+			intervals [7]:
+				xmin = 0.251311
+				xmax = 0.299174
+				text = "pre"
+			intervals [8]:
+				xmin = 0.299174
+				xmax = 0.352927
+				text = "clo"
+			intervals [9]:
+				xmin = 0.352927
+				xmax = 0.408306
+				text = "post"
+			intervals [10]:
+				xmin = 0.408306
+				xmax = 0.421842
+				text = "pr"
+			intervals [11]:
+				xmin = 0.421842
+				xmax = 0.533786
+				text = ""

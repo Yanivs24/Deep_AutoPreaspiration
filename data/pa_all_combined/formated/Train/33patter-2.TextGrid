@@ -1,0 +1,102 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.435387
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.435387
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.425387
+				text = "patter"
+			intervals [3]:
+				xmin = 0.425387
+				xmax = 0.435387
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.435387
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.032148
+				text = "p"
+			intervals [3]:
+				xmin = 0.032148
+				xmax = 0.123061
+				text = "a"
+			intervals [4]:
+				xmin = 0.123061
+				xmax = 0.255343
+				text = "t"
+			intervals [5]:
+				xmin = 0.255343
+				xmax = 0.425387
+				text = "V"
+			intervals [6]:
+				xmin = 0.425387
+				xmax = 0.435387
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.435387
+		intervals: size = 10
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.032148
+				text = "post"
+			intervals [3]:
+				xmin = 0.032148
+				xmax = 0.040014
+				text = "pr"
+			intervals [4]:
+				xmin = 0.040014
+				xmax = 0.064297
+				text = ""
+			intervals [5]:
+				xmin = 0.064297
+				xmax = 0.100377
+				text = "CRaperFIN"
+			intervals [6]:
+				xmin = 0.100377
+				xmax = 0.123061
+				text = "br"
+			intervals [7]:
+				xmin = 0.123061
+				xmax = 0.154744
+				text = "pre"
+			intervals [8]:
+				xmin = 0.154744
+				xmax = 0.225953
+				text = "clo"
+			intervals [9]:
+				xmin = 0.225953
+				xmax = 0.255343
+				text = "unpost"
+			intervals [10]:
+				xmin = 0.255343
+				xmax = 0.435387
+				text = ""

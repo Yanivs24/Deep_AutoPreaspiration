@@ -1,0 +1,110 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.519447
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.519447
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.509447
+				text = "PART"
+			intervals [3]:
+				xmin = 0.509447
+				xmax = 0.519447
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.519447
+		intervals: size = 5
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.133895
+				text = "p"
+			intervals [3]:
+				xmin = 0.133895
+				xmax = 0.330230
+				text = "a:"
+			intervals [4]:
+				xmin = 0.330230
+				xmax = 0.509447
+				text = "t"
+			intervals [5]:
+				xmin = 0.509447
+				xmax = 0.519447
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.519447
+		intervals: size = 13
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.032523
+				text = "voice"
+			intervals [3]:
+				xmin = 0.032523
+				xmax = 0.083301
+				text = "clo"
+			intervals [4]:
+				xmin = 0.083301
+				xmax = 0.133895
+				text = "post"
+			intervals [5]:
+				xmin = 0.133895
+				xmax = 0.156192
+				text = "pr"
+			intervals [6]:
+				xmin = 0.156192
+				xmax = 0.182810
+				text = ""
+			intervals [7]:
+				xmin = 0.182810
+				xmax = 0.277404
+				text = "CRperMID"
+			intervals [8]:
+				xmin = 0.277404
+				xmax = 0.317536
+				text = ""
+			intervals [9]:
+				xmin = 0.317536
+				xmax = 0.330230
+				text = "br"
+			intervals [10]:
+				xmin = 0.330230
+				xmax = 0.344972
+				text = "pre"
+			intervals [11]:
+				xmin = 0.344972
+				xmax = 0.421814
+				text = "clo"
+			intervals [12]:
+				xmin = 0.421814
+				xmax = 0.509447
+				text = "post"
+			intervals [13]:
+				xmin = 0.509447
+				xmax = 0.519447
+				text = ""

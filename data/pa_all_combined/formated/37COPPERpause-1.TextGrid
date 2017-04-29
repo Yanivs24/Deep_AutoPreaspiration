@@ -1,0 +1,106 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.643926
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.643926
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.633926
+				text = "COPPERpause"
+			intervals [3]:
+				xmin = 0.633926
+				xmax = 0.643926
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.643926
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.235718
+				text = "k"
+			intervals [3]:
+				xmin = 0.235718
+				xmax = 0.291912
+				text = "o"
+			intervals [4]:
+				xmin = 0.291912
+				xmax = 0.456769
+				text = "p"
+			intervals [5]:
+				xmin = 0.456769
+				xmax = 0.633926
+				text = "V"
+			intervals [6]:
+				xmin = 0.633926
+				xmax = 0.643926
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.643926
+		intervals: size = 11
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.138030
+				text = "clo"
+			intervals [3]:
+				xmin = 0.138030
+				xmax = 0.235718
+				text = "post"
+			intervals [4]:
+				xmin = 0.235718
+				xmax = 0.242293
+				text = "pr"
+			intervals [5]:
+				xmin = 0.242293
+				xmax = 0.282601
+				text = ""
+			intervals [6]:
+				xmin = 0.282601
+				xmax = 0.291912
+				text = "br"
+			intervals [7]:
+				xmin = 0.291912
+				xmax = 0.330691
+				text = "pre"
+			intervals [8]:
+				xmin = 0.330691
+				xmax = 0.419150
+				text = "clo"
+			intervals [9]:
+				xmin = 0.419150
+				xmax = 0.456769
+				text = "post(sp)"
+			intervals [10]:
+				xmin = 0.456769
+				xmax = 0.468909
+				text = "pr"
+			intervals [11]:
+				xmin = 0.468909
+				xmax = 0.643926
+				text = ""

@@ -1,0 +1,102 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.517115
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.517115
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.507115
+				text = "COTTER"
+			intervals [3]:
+				xmin = 0.507115
+				xmax = 0.517115
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.517115
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.161646
+				text = "k"
+			intervals [3]:
+				xmin = 0.161646
+				xmax = 0.247073
+				text = "o"
+			intervals [4]:
+				xmin = 0.247073
+				xmax = 0.386720
+				text = "t"
+			intervals [5]:
+				xmin = 0.386720
+				xmax = 0.507115
+				text = "V"
+			intervals [6]:
+				xmin = 0.507115
+				xmax = 0.517115
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.517115
+		intervals: size = 10
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.021626
+				xmax = 0.100482
+				text = "clo"
+			intervals [3]:
+				xmin = 0.100482
+				xmax = 0.161646
+				text = "post"
+			intervals [4]:
+				xmin = 0.161646
+				xmax = 0.213206
+				text = "CRperWH"
+			intervals [5]:
+				xmin = 0.213206
+				xmax = 0.247073
+				text = "br"
+			intervals [6]:
+				xmin = 0.247073
+				xmax = 0.264260
+				text = "pre"
+			intervals [7]:
+				xmin = 0.264260
+				xmax = 0.338566
+				text = "clo"
+			intervals [8]:
+				xmin = 0.338566
+				xmax = 0.386720
+				text = "post"
+			intervals [9]:
+				xmin = 0.386720
+				xmax = 0.403375
+				text = "pr"
+			intervals [10]:
+				xmin = 0.403375
+				xmax = 0.517115
+				text = ""

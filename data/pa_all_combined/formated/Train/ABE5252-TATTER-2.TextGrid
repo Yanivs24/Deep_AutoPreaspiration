@@ -1,0 +1,106 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.493922
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.493922
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.483922
+				text = "TATTER"
+			intervals [3]:
+				xmin = 0.483922
+				xmax = 0.493922
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.493922
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.155121
+				text = "t"
+			intervals [3]:
+				xmin = 0.155121
+				xmax = 0.252366
+				text = "a"
+			intervals [4]:
+				xmin = 0.252366
+				xmax = 0.402440
+				text = "t"
+			intervals [5]:
+				xmin = 0.402440
+				xmax = 0.483922
+				text = "V"
+			intervals [6]:
+				xmin = 0.483922
+				xmax = 0.493922
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.493922
+		intervals: size = 11
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.017670
+				xmax = 0.091071
+				text = "clo"
+			intervals [3]:
+				xmin = 0.091071
+				xmax = 0.155121
+				text = "post(af)"
+			intervals [4]:
+				xmin = 0.155121
+				xmax = 0.184108
+				text = "pr"
+			intervals [5]:
+				xmin = 0.184108
+				xmax = 0.221977
+				text = ""
+			intervals [6]:
+				xmin = 0.221977
+				xmax = 0.252366
+				text = "br"
+			intervals [7]:
+				xmin = 0.252366
+				xmax = 0.288832
+				text = "pre"
+			intervals [8]:
+				xmin = 0.288832
+				xmax = 0.348675
+				text = "clo"
+			intervals [9]:
+				xmin = 0.348675
+				xmax = 0.402440
+				text = "post(af)"
+			intervals [10]:
+				xmin = 0.402440
+				xmax = 0.410388
+				text = "pr"
+			intervals [11]:
+				xmin = 0.410388
+				xmax = 0.493922
+				text = ""

@@ -1,0 +1,4 @@
+*.pyc
+tmp_files/*
+data/*
+!data/pa_all_combined

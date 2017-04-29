@@ -1,0 +1,106 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.541327
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.541327
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.531327
+				text = "TETTER"
+			intervals [3]:
+				xmin = 0.531327
+				xmax = 0.541327
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.541327
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.181920
+				text = "t"
+			intervals [3]:
+				xmin = 0.181920
+				xmax = 0.252994
+				text = "e"
+			intervals [4]:
+				xmin = 0.252994
+				xmax = 0.406850
+				text = "t"
+			intervals [5]:
+				xmin = 0.406850
+				xmax = 0.531327
+				text = "V"
+			intervals [6]:
+				xmin = 0.531327
+				xmax = 0.541327
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.541327
+		intervals: size = 11
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.023700
+				xmax = 0.127692
+				text = "clo"
+			intervals [3]:
+				xmin = 0.127692
+				xmax = 0.181920
+				text = "post"
+			intervals [4]:
+				xmin = 0.181920
+				xmax = 0.194459
+				text = "pr"
+			intervals [5]:
+				xmin = 0.194459
+				xmax = 0.228086
+				text = ""
+			intervals [6]:
+				xmin = 0.228086
+				xmax = 0.252994
+				text = "br"
+			intervals [7]:
+				xmin = 0.252994
+				xmax = 0.279148
+				text = "pre"
+			intervals [8]:
+				xmin = 0.279148
+				xmax = 0.354185
+				text = "clo"
+			intervals [9]:
+				xmin = 0.354185
+				xmax = 0.406850
+				text = "post(af)"
+			intervals [10]:
+				xmin = 0.406850
+				xmax = 0.415036
+				text = "pr"
+			intervals [11]:
+				xmin = 0.415036
+				xmax = 0.541327
+				text = ""

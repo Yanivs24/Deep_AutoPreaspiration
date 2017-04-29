@@ -1,0 +1,130 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 1.006982
+tiers? <exists>
+size = 3
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 1.006982
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.996982
+				text = "TO BATTER"
+			intervals [3]:
+				xmin = 0.996982
+				xmax = 1.006982
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 1.006982
+		intervals: size = 8
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.401245
+				text = "t"
+			intervals [3]:
+				xmin = 0.401245
+				xmax = 0.441371
+				text = ""
+			intervals [4]:
+				xmin = 0.441371
+				xmax = 0.523062
+				text = "b"
+			intervals [5]:
+				xmin = 0.523062
+				xmax = 0.610562
+				text = "a"
+			intervals [6]:
+				xmin = 0.610562
+				xmax = 0.875277
+				text = "t"
+			intervals [7]:
+				xmin = 0.875277
+				xmax = 0.996982
+				text = "V"
+			intervals [8]:
+				xmin = 0.996982
+				xmax = 1.006982
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 1.006982
+		intervals: size = 15
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.055634
+				xmax = 0.312761
+				text = "clo"
+			intervals [3]:
+				xmin = 0.312761
+				xmax = 0.401245
+				text = "post(af)"
+			intervals [4]:
+				xmin = 0.401245
+				xmax = 0.441371
+				text = ""
+			intervals [5]:
+				xmin = 0.441371
+				xmax = 0.464806
+				text = "voice"
+			intervals [6]:
+				xmin = 0.464806
+				xmax = 0.497518
+				text = "clo"
+			intervals [7]:
+				xmin = 0.497518
+				xmax = 0.523062
+				text = "unpost"
+			intervals [8]:
+				xmin = 0.523062
+				xmax = 0.527235
+				text = "pr"
+			intervals [9]:
+				xmin = 0.527235
+				xmax = 0.593982
+				text = ""
+			intervals [10]:
+				xmin = 0.593982
+				xmax = 0.610562
+				text = "br"
+			intervals [11]:
+				xmin = 0.610562
+				xmax = 0.696866
+				text = "pre"
+			intervals [12]:
+				xmin = 0.696866
+				xmax = 0.749587
+				text = "clo"
+			intervals [13]:
+				xmin = 0.749587
+				xmax = 0.875277
+				text = "post"
+			intervals [14]:
+				xmin = 0.875277
+				xmax = 0.882414
+				text = "pr"
+			intervals [15]:
+				xmin = 0.882414
+				xmax = 1.006982
+				text = ""
