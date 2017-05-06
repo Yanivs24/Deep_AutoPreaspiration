@@ -5,6 +5,8 @@ import dynet as dy
 import argparse
 import random
 
+from model.model import BiRNNBinaryPredictor
+
 AUTHOR={'Yaniv Sheena'}
 
 
@@ -19,7 +21,7 @@ class DynetBiRNNModel(object):
         self.model = dy.Model()
 
         # build BiLSTM
-        self.birnn = dy.BiRNNBuilder(1, rnn_input_dim, rnn_output_dim, self.model, dy.LSTMBuilder)
+        self.birnn = dy.BiRNNBuilder(2, rnn_input_dim, rnn_output_dim, self.model, dy.LSTMBuilder)
 
         # first MLP layer params
         self.pW1 = self.model.add_parameters((mlp_hid_dim, rnn_output_dim))
@@ -56,7 +58,7 @@ class DynetBiRNNModel(object):
         # Feed the sequence of vectors into the BiRNN
         rnn_outputs = self.birnn.transduce(in_seq)
 
-        # output only Yindex 
+        # output only representation of the given index 
         return rnn_outputs[index]
 
     def mlp_layer1(self, x):
@@ -81,18 +83,18 @@ class DynetBiRNNModel(object):
         return np.argmax(vals), -np.log(vals[label])
 
     def predict(self, seq, index):
-        ''' wrapper method - classify without returning the loss '''
+        ''' wrapper of classify - classify without returning the loss '''
         prediction, _ = self.classify(seq, index, 0)
         return prediction
 
-    def train_model(self, train_data, dev_data, learning_rate=1, max_iterations=20):
+    def train_model(self, train_data, dev_data, learning_rate, iterations):
         ''' Train the network '''
         #trainer = dy.SimpleSGDTrainer(self.model)
         trainer = dy.AdamTrainer(self.model)
         best_dev_loss = 1e3
         best_iter = 0
         print 'Start training the model..'
-        for ITER in xrange(max_iterations):
+        for ITER in xrange(iterations):
             random.shuffle(train_data)
             closs = 0.0
             train_success = 0
@@ -125,6 +127,9 @@ class DynetBiRNNModel(object):
 
         print 'Learning process has finished!'
 
+    def store_params(self, fpath):
+        self.model.save(fpath, [self.birnn, self.pW1, self.pb1, self.pW2, self.pb2])
+
 
 def read_examples(file_name):
     with open(file_name, 'r') as f:
@@ -138,6 +143,9 @@ if __name__ == '__main__':
     # command line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("train_path", help="A path to the training set")
+    parser.add_argument("params_path", help="A path to a file in which the trained model parameters will be stored")
+    parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=15, type=int)
+    parser.add_argument('--learning_rate', help='The learning rate', default=0.1, type=float)
     args = parser.parse_args()
 
     raw_dataset = read_examples(args.train_path)
@@ -165,13 +173,17 @@ if __name__ == '__main__':
         # append to the dataset
         dataset.append((speech_seq, int(ex[1]), int(ex[2])))
 
-    # split to dataset into training set and validation set
+    # split the dataset into training set and validation set
     train_set_size = int((1-DEV_SET_PROPORTION) * len(dataset))
     train_data = dataset[:train_set_size]
     dev_data   = dataset[train_set_size:]
 
     # build a new model 
-    my_model = DynetBiRNNModel()
+    my_model = BiRNNBinaryPredictor()
 
     # train the model
-    my_model.train_model(train_data, dev_data)
+    my_model.train_model(train_data, dev_data,  args.learning_rate, args.num_iters)
+
+    # store parameters in a file
+    print "Storing model parameters in %s" % args.params_path
+    my_model.store_params(args.params_path)
