@@ -77,8 +77,8 @@ def decode_files(model, feature_path):
         fe_matrix = read_features(file) 
         segment_size = fe_matrix.shape[0]
 
-        # get real labels - due to the windows sizes
-        #labels = (LEFT_WINDOW_SIZE, segment_size-RIGHT_WINDOW_SIZE)
+        # Fix labels - these labels assumes counting from 1 - so decrement
+        labels = (labels[0]-1, labels[1]-1)
 
         # Predict all the frames at once using the model. 
         # The result is a binary vector indicating whether each time-frame is 

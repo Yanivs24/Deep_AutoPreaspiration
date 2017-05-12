@@ -51,6 +51,9 @@ def build_dataset(feature_path, output_path):
     # run over all feature files
     for file, labels in zip(feature_files_list, labels_list):
 
+        # Fix labels - these labels assumes counting from 1 - so decrement
+        labels = (labels[0]-1, labels[1]-1)
+
         # get feature matrix and the segment size
         fe_matrix = read_features(file) 
         full_segment_size = fe_matrix.shape[0]
