@@ -9,8 +9,6 @@ FILE_WITH_FEATURE_FILE_LIST = 'feature_names.txt'
 FILE_WITH_LABELS            = 'labels.txt'
 FIRST_FEATURE_INDEX = 1
 LAST_FEATURE_INDEX  = 9
-#LEFT_WINDOW_SIZE    = 80
-#RIGHT_WINDOW_SIZE   = 80
 WINDOW_STD          = 20
 
 
@@ -67,9 +65,6 @@ def build_dataset(feature_path, output_path):
         if left_index >= right_index:
             print 'skipping example - too short'
             continue
-
-        # debug
-        print left_index, right_index
 
         # Crop the segment using the random window-sizes
         # print 'Croping segment to %s:%s' % (left_index, right_index)

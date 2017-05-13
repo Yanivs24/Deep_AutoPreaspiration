@@ -1,6 +1,9 @@
 import numpy as np
 import dynet as dy
+#import _gdynet as dy # dynet for GPU
+#dy.init()
 import random
+
 
 NUM_OF_FEATURES_PER_FRAME = 8
 
@@ -19,14 +22,14 @@ class BiRNNBinaryPredictor(object):
             self.birnn = dy.BiRNNBuilder(2, rnn_input_dim, rnn_output_dim, self.model, dy.LSTMBuilder)
 
             # first MLP layer params
-            self.pW1 = self.model.add_parameters((mlp_hid_dim, rnn_output_dim))
-            self.pb1 = self.model.add_parameters(mlp_hid_dim)
+            self.pW1 = self.model.add_parameters((mlp_hid_dim, rnn_output_dim), init=dy.GlorotInitializer())
+            self.pb1 = self.model.add_parameters(mlp_hid_dim, init=dy.GlorotInitializer())
 
             # hidden MLP layer params
-            self.pW2 = self.model.add_parameters((mlp_out_dim, mlp_hid_dim))
-            self.pb2 = self.model.add_parameters(mlp_out_dim)
+            self.pW2 = self.model.add_parameters((mlp_out_dim, mlp_hid_dim), init=dy.GlorotInitializer())
+            self.pb2 = self.model.add_parameters(mlp_out_dim, init=dy.GlorotInitializer())
 
-    def predict_probs(self, seq, index=None):
+    def predict_probs(self, seq, index=None, train_mode=False):
         '''
             Propagate through the network and output the probabilties
             of the #index element in the given sequence (in case index is given),
@@ -36,15 +39,21 @@ class BiRNNBinaryPredictor(object):
         # its elements
         rnn_outputs = self.birnn_layer(seq)
 
-        # predict all the sequence at once
+        # predict all the sequence at once - used in inference
         if index is None:
             # Feed all the BiRNN outputs (y1..yn) into the MLP
             return [self.do_mlp(y) for y in rnn_outputs]
 
         # predict a specific index
         else:
+            # get Yi
+            rnn_y_i = rnn_outputs[index]
+            # Dropout layer - only when training
+            #if train_mode:
+            #    dy.dropout(rnn_y_i, 0.3)
+
             # Feed the BiRNN representation (Yindex) into the MLP
-            return self.do_mlp(rnn_outputs[index])
+            return self.do_mlp(rnn_y_i)
 
     def birnn_layer(self, seq):
         ''' Feed the input sequence into the BiRNN and return the representation of
@@ -71,7 +80,7 @@ class BiRNNBinaryPredictor(object):
     def mlp_layer1(self, x):
         W = dy.parameter(self.pW1)
         b = dy.parameter(self.pb1)
-        return dy.tanh(W*x+b)
+        return dy.rectify(W*x+b)
 
     def mlp_layer2(self, x):
         W = dy.parameter(self.pW2)
@@ -109,7 +118,7 @@ class BiRNNBinaryPredictor(object):
             train_success = 0
             for seq, index, label in train_data:
                 dy.renew_cg()
-                probs = self.predict_probs(seq, index)
+                probs = self.predict_probs(seq, index, train_mode=True)
                 loss = self.do_loss(probs, label)
                 closs += loss.value()
                 loss.backward()

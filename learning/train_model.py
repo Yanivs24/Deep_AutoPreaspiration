@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import numpy as np
-import dynet as dy
+import signal
 import argparse
 import random
 
@@ -13,12 +13,30 @@ AUTHOR={'Yaniv Sheena'}
 NUM_OF_FEATURES_PER_FRAME = 8
 DEV_SET_PROPORTION        = 0.2
 
+# For the signal handler
+global_vars = {'model': None, 'params_path': 'tmp_files/params'}
+
 
 def read_examples(file_name):
+    '''
+        Read examples from the given dataset (file)
+    '''
     with open(file_name, 'r') as f:
         lines = f.readlines()
 
     return [l.strip().split(',') for l in lines]
+
+def sigint_handler(signum, frame):
+    ''' 
+        If the signal occurred during training - save the current parameters 
+        in a file
+    '''
+    if global_vars['model']:
+        print "Storing model parameters in %s" % global_vars['params_path']
+        global_vars['model'].store_params(global_vars['params_path'])
+
+    exit(1)
+
 
 if __name__ == '__main__':
 
@@ -27,8 +45,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("train_path", help="A path to the training set")
     parser.add_argument("params_path", help="A path to a file in which the trained model parameters will be stored")
-    parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=5, type=int)
-    parser.add_argument('--learning_rate', help='The learning rate', default=0.01, type=float)
+    parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=10, type=int)
+    parser.add_argument('--learning_rate', help='The learning rate', default=0.1, type=float)
     args = parser.parse_args()
 
     raw_dataset = read_examples(args.train_path)
@@ -63,6 +81,12 @@ if __name__ == '__main__':
 
     # build a new model 
     my_model = BiRNNBinaryPredictor()
+
+    # before training - store relevant data in the global dict
+    # and install a signal for SIGINT
+    global_vars['model'] = my_model
+    global_vars['params_path'] = args.params_path
+    signal.signal(signal.SIGINT, sigint_handler)
 
     # train the model
     my_model.train_model(train_data, dev_data,  args.learning_rate, args.num_iters)

@@ -40,8 +40,8 @@ num_of_samples_test=$3
 
 # Input validation
 if [ ! -d $examples_path ]; then
-	echo "\"${examples_path}\" - not a directory"
-	exit 2
+    echo "\"${examples_path}\" - not a directory"
+    exit 2
 fi
 
 # create directories for the feature-files
@@ -59,28 +59,42 @@ mkdir  $CONFIG_PATH
 # Build train&test sets and the corresponding config files using python script
 python scripts/build_config_files.py $examples_path $CONFIG_PATH $num_of_samples_train $num_of_samples_test
 
+# Check exit code
+exit_code=$?
+if [ $exit_code -ne 0 ]; then
+    echo "build_config_files.py failed with exit code $exit_code"
+    exit $exit_code
+fi
+
 # call feature extraction with the created config files for train and test sets
 python feature_extraction/auto_pa_extract_features.py   \
- --window_min $MIN_WIN_TRAIN 							\
- --window_max $MAX_WIN_TRAIN 							\
- --pa_tier bell 										\
- --pa_mark pre 											\
- $CONFIG_PATH/PreaspirationTrainTgList.txt 				\
- $CONFIG_PATH/PreaspirationTrainWavList.txt 			\
- $FEATURE_PATH_TRAIN/input.txt 							\
- $FEATURE_PATH_TRAIN/feature_names.txt 					\
- $FEATURE_PATH_TRAIN/labels.txt 						\
+ --window_min $MIN_WIN_TRAIN                            \
+ --window_max $MAX_WIN_TRAIN                            \
+ --pa_tier bell                                         \
+ --pa_mark pre                                          \
+ $CONFIG_PATH/PreaspirationTrainTgList.txt              \
+ $CONFIG_PATH/PreaspirationTrainWavList.txt             \
+ $FEATURE_PATH_TRAIN/input.txt                          \
+ $FEATURE_PATH_TRAIN/feature_names.txt                  \
+ $FEATURE_PATH_TRAIN/labels.txt                         \
  $FEATURE_PATH_TRAIN/feature_files
 
+ # Check exit code
+exit_code=$?
+if [ $exit_code -ne 0 ]; then
+    echo "auto_pa_extract_features.py failed with exit code $exit_code"
+    exit $exit_code
+fi
+
 python feature_extraction/auto_pa_extract_features.py   \
---window_min $MIN_WIN_TEST								\
---window_max $MAX_WIN_TEST								\
---pa_tier bell											\
---pa_mark pre 											\
-$CONFIG_PATH/PreaspirationTestTgList.txt				\
-$CONFIG_PATH/PreaspirationTestWavList.txt				\
-$FEATURE_PATH_TEST/input.txt							\
-$FEATURE_PATH_TEST/feature_names.txt					\
-$FEATURE_PATH_TEST/labels.txt							\
+--window_min $MIN_WIN_TEST                              \
+--window_max $MAX_WIN_TEST                              \
+--pa_tier bell                                          \
+--pa_mark pre                                           \
+$CONFIG_PATH/PreaspirationTestTgList.txt                \
+$CONFIG_PATH/PreaspirationTestWavList.txt               \
+$FEATURE_PATH_TEST/input.txt                            \
+$FEATURE_PATH_TEST/feature_names.txt                    \
+$FEATURE_PATH_TEST/labels.txt                           \
 $FEATURE_PATH_TEST/feature_files
 
