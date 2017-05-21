@@ -1,9 +1,18 @@
+#!/usr/bin/python
+
+# This file is part of BiRNN_AutoPA - automatic extraction of pre-aspiration 
+# from speech segments in audio files.
+#
+# Copyright (c) 2017 Yaniv Sheena
+
+
 import numpy as np
 import dynet as dy
+import matplotlib.pyplot as plt
 import argparse
 import os
 
-from model.model import BiRNNBinaryPredictor
+from model.model import BiRNNPredictor
 
 FILE_WITH_FEATURE_FILE_LIST = 'feature_names.txt'
 FILE_WITH_LABELS            = 'labels.txt'
@@ -29,13 +38,13 @@ def get_labels(feature_path):
 def read_features(file_name):
     return np.loadtxt(file_name, skiprows=1)[:, FIRST_FEATURE_INDEX:LAST_FEATURE_INDEX]
 
-def smooth_binary_vector(vec):
-    ''' Smooth binary vector using convolotion with 5 valued vectores of ones:
-        [1,1,1,1,1], and binary threshold of 3'''
+def smooth_predictions_vector(vec):
+    ''' Smooth binary vector using convolotion with 5 valued vector [0.2,.., 0.2]
+        and rounding to the nearest integer '''
     smooth_vec = np.zeros(len(vec))
+
     for i in range(2, len(vec)-2):
-        if sum(vec[i-2:i+3]) >= 3:
-            smooth_vec[i] = 1
+        smooth_vec[i] = np.round(np.average(vec[i-2:i+3]))
 
     return smooth_vec
 
@@ -56,6 +65,32 @@ def find_longest_event(vec):
                 count = 0
 
     return end_index-max_count, end_index-1
+
+def plot_probs(model, fe_matrix):
+    ''' Plot the probability of the classes'''
+    pr_0 = []
+    pr_1 = []
+    pr_2 = []
+    probs = model.predict_sequence(fe_matrix, get_probs=True)
+    for pr in probs:
+        new_pr = [round(pi, 3) for pi in pr]
+        new_pr[2] = round(1 - new_pr[0] - new_pr[1], 3)
+        
+        pr_0.append(new_pr[0])
+        pr_1.append(new_pr[1])
+        pr_2.append(new_pr[2])
+
+    size = len(probs)
+    pre_event = plt.plot(pr_0, label='y=0 (pre-event)', linewidth=3.0)
+    event = plt.plot(pr_1, label='y=1 (event)', linewidth=3.0)
+    post_event = plt.plot(pr_2, label='y=2 (post-event)', linewidth=3.0)
+
+    plt.legend(fontsize=10)
+    
+    plt.xlabel('Frame ($x_t$)', fontsize=14)
+    plt.ylabel('Probability', fontsize=14)
+
+    plt.show()
 
 
 def decode_files(model, feature_path):
@@ -81,17 +116,22 @@ def decode_files(model, feature_path):
         labels = (labels[0]-1, labels[1]-1)
 
         # Predict all the frames at once using the model. 
-        # The result is a binary vector indicating whether each time-frame is 
-        # predicted as part of the target event or not
-        binary_vec = model.predict_sequence(fe_matrix)
+        # The result is a predictions vector indicating the type of
+        # each time-frame from the classes: (pre-event, event, post-event)
+        predictions_vec = model.predict_sequence(fe_matrix)
 
-        # smooth the binary vector to avoid singular predictions
-        smooth_vec = smooth_binary_vector(binary_vec)
+        # Debug:
+        # plot_probs(model, fe_matrix) 
+
+        # smooth the vector to decrease noise
+        smooth_vec = smooth_predictions_vector(predictions_vec)
 
         # find indexes of the longest subvector contains only ones
         predicted_labels = find_longest_event(smooth_vec)
-        print 'real labels: ', labels
-        print 'predicted labels: ', predicted_labels
+
+        # Debug:
+        # print 'real labels: ', labels
+        # print 'predicted labels: ', predicted_labels
 
         # store pre-aspiration durations
         X.append(labels[1]-labels[0])
@@ -135,7 +175,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Construct a model with the pre-trained parameters
-    my_model = BiRNNBinaryPredictor(load_from_file=args.params_path)
+    my_model = BiRNNPredictor(load_from_file=args.params_path)
 
     # Decode the given files
     decode_files(my_model, args.feature_path)

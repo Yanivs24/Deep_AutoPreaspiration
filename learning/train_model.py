@@ -1,20 +1,20 @@
 #!/usr/bin/python
 
+# This file is part of BiRNN_AutoPA - automatic extraction of pre-aspiration 
+# from speech segments in audio files.
+#
+# Copyright (c) 2017 Yaniv Sheena
+
+
 import numpy as np
 import signal
 import argparse
 import random
 
-from model.model import BiRNNBinaryPredictor
-
-AUTHOR={'Yaniv Sheena'}
-
+from model.model import BiRNNPredictor
 
 NUM_OF_FEATURES_PER_FRAME = 8
-DEV_SET_PROPORTION        = 0.2
-
-# For the signal handler
-global_vars = {'model': None, 'params_path': 'tmp_files/params'}
+DEV_SET_PROPORTION        = 0.3
 
 
 def read_examples(file_name):
@@ -26,17 +26,6 @@ def read_examples(file_name):
 
     return [l.strip().split(',') for l in lines]
 
-def sigint_handler(signum, frame):
-    ''' 
-        If the signal occurred during training - save the current parameters 
-        in a file
-    '''
-    if global_vars['model']:
-        print "Storing model parameters in %s" % global_vars['params_path']
-        global_vars['model'].store_params(global_vars['params_path'])
-
-    exit(1)
-
 
 if __name__ == '__main__':
 
@@ -45,7 +34,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("train_path", help="A path to the training set")
     parser.add_argument("params_path", help="A path to a file in which the trained model parameters will be stored")
-    parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=10, type=int)
+    parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=50, type=int)
     parser.add_argument('--learning_rate', help='The learning rate', default=0.1, type=float)
     args = parser.parse_args()
 
@@ -80,17 +69,12 @@ if __name__ == '__main__':
     dev_data   = dataset[train_set_size:]
 
     # build a new model 
-    my_model = BiRNNBinaryPredictor()
-
-    # before training - store relevant data in the global dict
-    # and install a signal for SIGINT
-    global_vars['model'] = my_model
-    global_vars['params_path'] = args.params_path
-    signal.signal(signal.SIGINT, sigint_handler)
+    my_model = BiRNNPredictor()
 
     # train the model
-    my_model.train_model(train_data, dev_data,  args.learning_rate, args.num_iters)
+    my_model.train_model(train_data,
+                         dev_data,  
+                         args.learning_rate,
+                         args.num_iters,
+                         args.params_path)
 
-    # store parameters in a file
-    print "Storing model parameters in %s" % args.params_path
-    my_model.store_params(args.params_path)

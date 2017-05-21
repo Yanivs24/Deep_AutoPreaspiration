@@ -1,4 +1,11 @@
 #!/usr/bin/python
+
+# This file is part of BiRNN_AutoPA - automatic extraction of pre-aspiration 
+# from speech segments in audio files.
+#
+# Copyright (c) 2017 Yaniv Sheena
+
+
 import numpy as np
 import random
 import argparse
@@ -70,42 +77,24 @@ def build_dataset(feature_path, output_path):
         # print 'Croping segment to %s:%s' % (left_index, right_index)
         cur_frame = fe_matrix[left_index:right_index, :].flatten()
 
-        # For each time-frame in the cropped segment, set it binary label and add the point (frame,index,lael)
-        # to the dataset
-        for i in range(right_index-left_index):
-            abs_index = left_index + i
-            # if the represented frame is within the pre-aspiration range - set label 1
-            # and otherwise the label will be 0
-            label = 0
-            if (abs_index >= labels[0]) and (abs_index <= labels[1]):
-                label = 1
+        # Get the relative labels after cropping the segment
+        cropped_size = right_index - left_index
+        relative_lbl_left  = min(cropped_size, max(0, labels[0] - left_index))
+        relative_lbl_right = min(cropped_size, max(0, labels[1] - left_index))
 
-            # append the example to the data set
-            data_set.append((cur_frame, i, label))
+        # Build example from the flatten frame and the new labels - 
+        # add it to the data set
+        data_set.append((cur_frame, relative_lbl_left, relative_lbl_right))
 
-
-    # since there are much more frames that are not part of pre-aspiration event (negative examples),
-    # we balance the data set by randomly dropping such negative examples.
-    positive_size = sum(example[2]==1 for example in data_set)
-    negative_drop_amount = len(data_set) - 2*positive_size
+        # Debug:
+        # print 'Real labels: %s,%s' % labels
+        # print 'Cropped to : %s,%s' % (left_index, right_index)
+        # print 'New labels : %s,%s' % (relative_lbl_left, relative_lbl_right)
 
     # shuffle data 
     random.shuffle(data_set)
 
-    ind = 0
-    dropped_amount = 0
-    # Remove first #negative_drop_amount negative examples
-    while dropped_amount < negative_drop_amount:
-        if data_set[ind][2] == 0:
-            data_set.pop(ind)
-            dropped_amount += 1
-        else:
-            ind += 1
-
-    # shuffle data again
-    random.shuffle(data_set)
-
-    print '%s examples were extracted from the files, %s%% are positive' % (len(data_set), 100.0*positive_size/len(data_set))
+    print '%s examples were extracted from the files' % len(data_set)
 
     # write data set to file
     print 'Write examples to: "%s"' % output_path
