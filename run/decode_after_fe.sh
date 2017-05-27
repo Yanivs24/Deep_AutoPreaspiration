@@ -8,11 +8,12 @@
 # Usage: 
 # decode_after_fe.sh
 #
-# Description: This script should be called only after successfully performing 
-#              feature extraction using 'run/extract_features.sh'. This script 
-#              decode the testset examples using the extracted features for test.
-#              The model is based on the the tuned parameters (tmp_files/model_params.txt)
-#              and hence should be called after training.
+# Description: 
+# This script should be called only after successfully performing 
+# feature extraction using 'run/extract_features.sh'. This script 
+# decode the testset examples using the extracted features for test.
+# The model is based on the the tuned parameters (tmp_files/model_params.txt)
+# and hence should be called after training.
 
 
 # path of the feature file

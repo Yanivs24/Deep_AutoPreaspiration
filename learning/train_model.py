@@ -35,7 +35,7 @@ if __name__ == '__main__':
     parser.add_argument("train_path", help="A path to the training set")
     parser.add_argument("params_path", help="A path to a file in which the trained model parameters will be stored")
     parser.add_argument('--num_iters', help='Number of iterations (epochs)', default=50, type=int)
-    parser.add_argument('--learning_rate', help='The learning rate', default=0.1, type=float)
+    parser.add_argument('--learning_rate', help='The learning rate', default=0.001, type=float)
     args = parser.parse_args()
 
     raw_dataset = read_examples(args.train_path)

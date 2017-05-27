@@ -8,10 +8,11 @@
 # Usage: 
 # train_after_fe.sh
 #
-# Description: This script should be called only after successfully performing 
-#              feature extraction using 'run/extract_features.sh'. This script trains
-#              a model using the extracted features for the training set, and store the
-#              tuned parameters in a file that can be used by the decoder (tmp_files/model_params.txt).
+# Description: 
+# This script should be called only after successfully performing 
+# feature extraction using 'run/extract_features.sh'. This script trains
+# a model using the extracted features for the training set, and store the
+# tuned parameters in a file that can be used by the decoder (tmp_files/model_params.txt).
 
 
 # Path of the feature file

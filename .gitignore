@@ -1,4 +1,7 @@
 *.pyc
+*.TextGrid
+*.wav
+tests
 tmp_files/*
 data/*
 !data/pa_all_combined

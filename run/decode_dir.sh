@@ -12,7 +12,7 @@
 # Decode the examples in the given directory (DIRECTORY_PATH) and test the performance by
 # comparing the predictions to the manually coded pre-aspiration (within the textgrids).
 # Note: The examples should be formated using "scripts/format_wav_files.py" 
-#       and filtered using "scripts/filter_examples.py"
+# and filtered using "scripts/filter_examples.py"
 
 
 # Window sizes (ms)

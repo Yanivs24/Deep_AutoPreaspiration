@@ -39,7 +39,7 @@ def read_features(file_name):
     return np.loadtxt(file_name, skiprows=1)[:, FIRST_FEATURE_INDEX:LAST_FEATURE_INDEX]
 
 def smooth_predictions_vector(vec):
-    ''' Smooth binary vector using convolotion with 5 valued vector [0.2,.., 0.2]
+    ''' Smooth binary vector using convolution with 5 valued vector [0.2,.., 0.2]
         and rounding to the nearest integer '''
     smooth_vec = np.zeros(len(vec))
 
@@ -130,8 +130,8 @@ def decode_files(model, feature_path):
         predicted_labels = find_longest_event(smooth_vec)
 
         # Debug:
-        # print 'real labels: ', labels
-        # print 'predicted labels: ', predicted_labels
+        #print 'real labels: ', labels
+        #print 'predicted labels: ', predicted_labels
 
         # store pre-aspiration durations
         X.append(labels[1]-labels[0])
