@@ -1,8 +1,9 @@
 #!/usr/bin/python
-# This file is part of AutoPA - automatic extraction of pre-aspiration 
+
+# This file is part of BiRNN_AutoPA - automatic extraction of pre-aspiration 
 # from speech segments in audio files.
 #
-# Copyright (c) 2016 Yaniv Sheena
+# Copyright (c) 2017 Yaniv Sheena
 #
 # Description: 
 # format all wav files in given dir to 16kHz mono and place them in a new sub-dir
