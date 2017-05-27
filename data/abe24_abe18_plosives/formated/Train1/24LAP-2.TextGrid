@@ -1,0 +1,100 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.514277
+tiers? <exists>
+size = 4
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.514277
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.504277
+				text = "LAP"
+			intervals [3]:
+				xmin = 0.504277
+				xmax = 0.514277
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.514277
+		intervals: size = 5
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.128740
+				text = "l"
+			intervals [3]:
+				xmin = 0.128740
+				xmax = 0.248954
+				text = "a"
+			intervals [4]:
+				xmin = 0.248954
+				xmax = 0.504277
+				text = "p"
+			intervals [5]:
+				xmin = 0.504277
+				xmax = 0.514277
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.514277
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.217144
+				text = ""
+			intervals [2]:
+				xmin = 0.217144
+				xmax = 0.248954
+				text = "br"
+			intervals [3]:
+				xmin = 0.248954
+				xmax = 0.304968
+				text = "pre"
+			intervals [4]:
+				xmin = 0.304968
+				xmax = 0.408155
+				text = "clo"
+			intervals [5]:
+				xmin = 0.408155
+				xmax = 0.504277
+				text = "post(sp)"
+			intervals [6]:
+				xmin = 0.504277
+				xmax = 0.514277
+				text = ""
+	item [4]:
+		class = "IntervalTier"
+		name = "AutoPA"
+		xmin = 0.000000
+		xmax = 0.514277
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.249000
+				text = ""
+			intervals [2]:
+				xmin = 0.249000
+				xmax = 0.304000
+				text = "pred"
+			intervals [3]:
+				xmin = 0.304000
+				xmax = 0.514277
+				text = ""

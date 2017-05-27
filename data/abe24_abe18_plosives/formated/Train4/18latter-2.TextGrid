@@ -1,0 +1,108 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0.000000
+xmax = 0.582270
+tiers? <exists>
+size = 4
+item []:
+	item [1]:
+		class = "IntervalTier"
+		name = "Mary"
+		xmin = 0.000000
+		xmax = 0.582270
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.572270
+				text = "latter"
+			intervals [3]:
+				xmin = 0.572270
+				xmax = 0.582270
+				text = ""
+	item [2]:
+		class = "IntervalTier"
+		name = "John"
+		xmin = 0.000000
+		xmax = 0.582270
+		intervals: size = 6
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.010000
+				text = ""
+			intervals [2]:
+				xmin = 0.010000
+				xmax = 0.093349
+				text = "l"
+			intervals [3]:
+				xmin = 0.093349
+				xmax = 0.203489
+				text = "a"
+			intervals [4]:
+				xmin = 0.203489
+				xmax = 0.389958
+				text = "t"
+			intervals [5]:
+				xmin = 0.389958
+				xmax = 0.572270
+				text = "V"
+			intervals [6]:
+				xmin = 0.572270
+				xmax = 0.582270
+				text = ""
+	item [3]:
+		class = "IntervalTier"
+		name = "bell"
+		xmin = 0.000000
+		xmax = 0.582270
+		intervals: size = 7
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.157647
+				text = ""
+			intervals [2]:
+				xmin = 0.157647
+				xmax = 0.203489
+				text = "br"
+			intervals [3]:
+				xmin = 0.203489
+				xmax = 0.236233
+				text = "pre"
+			intervals [4]:
+				xmin = 0.236233
+				xmax = 0.312438
+				text = "clo"
+			intervals [5]:
+				xmin = 0.312438
+				xmax = 0.389958
+				text = "post"
+			intervals [6]:
+				xmin = 0.389958
+				xmax = 0.399954
+				text = "pr"
+			intervals [7]:
+				xmin = 0.399954
+				xmax = 0.582270
+				text = ""
+	item [4]:
+		class = "IntervalTier"
+		name = "AutoPA"
+		xmin = 0.000000
+		xmax = 0.582270
+		intervals: size = 3
+			intervals [1]:
+				xmin = 0.000000
+				xmax = 0.203000
+				text = ""
+			intervals [2]:
+				xmin = 0.203000
+				xmax = 0.235000
+				text = "pred"
+			intervals [3]:
+				xmin = 0.235000
+				xmax = 0.582270
+				text = ""

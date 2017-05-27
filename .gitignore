@@ -1,7 +1,6 @@
 *.pyc
-*.TextGrid
-*.wav
 tests
 tmp_files/*
 data/*
-!data/pa_all_combined
+!data/abe24_abe18_plosives/
+
