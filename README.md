@@ -52,7 +52,7 @@ For example:
 ### Decoding
 To decode all the examples in a directory using a pre-trained model type:
 
-	$ run/decode_dir DIRECTORY_PATH
+	$ run/decode_dir.sh DIRECTORY_PATH
   
 Note: This can be used only after training a model
 
