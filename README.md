@@ -19,10 +19,11 @@ Alternatively, you can download the current version of AutoPreaspiration as a zi
 ## Setup
 First, navigate to the project root directory.
 
-In order to work with a new data, the wav files should be converted to 6kHz mono.
-This can be done by typing:
+In order to work with a new data, the wav files should be converted to 16kHz mono.
+This can be done by typing (***A prerequisite for this script is installing SoX utility***):
 
 	$ python scripts/format_wav_files.py DIRECTORY_PATH
+
 When 'DIRECTORY_PATH' is the path of the directory containing the data (wav&TextGrids)
 This will place all the formatted wav files and the corresponding TextGrids in: DIRECTORY_PATH/formated
 
