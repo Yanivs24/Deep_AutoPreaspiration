@@ -1,4 +1,4 @@
-# BiRNN_AutoPreaspiration
+# Deep AutoPreaspiration
 Automatic extraction of pre-aspiration from voice segments using bi-directional RNN based method
 
 
